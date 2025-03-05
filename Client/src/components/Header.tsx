@@ -1,6 +1,6 @@
 
 import { ShoppingCart } from "@mui/icons-material";
-import { AppBar, Badge, Box, IconButton, List, ListItem, Toolbar, Typography } from "@mui/material";
+import { AppBar, Badge, Box, Button, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import { NavLink } from "react-router";
 
 
@@ -28,11 +28,11 @@ export default function Header() {
           <Box sx={{display: "flex",alignItems: "center"}}> 
             
        <Typography variant="h6">E-Commerce</Typography>  
-       <List sx={{display: "flex"}}> 
+       <Stack direction="row"> 
         {  links.map(link => 
-          <ListItem component={NavLink} to={link.to} sx={navStyles}>{link.title}</ListItem>
+          <Button key={link.to} component={NavLink} to={link.to} sx={navStyles}>{link.title}</Button>
         ) }
-       </List> 
+       </Stack> 
        </Box> 
       <Box sx={{display: "flex",alignItems: "center"}}> 
       <IconButton size="large" edge="start" color="inherit">   
