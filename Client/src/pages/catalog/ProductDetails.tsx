@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { IProduct } from "../../model/IProduct";
 import { CircularProgress, Divider, Grid2, TableBody, TableCell, TableContainer, TableRow, Typography } from "@mui/material";
 import requests from "../../api/requests";
+import NotFound from "../../errors/NotFound";
 
 
 export default function ProductDetailsPage() { 
@@ -20,7 +21,7 @@ id && requests.Catalog.details(parseInt(id))
 }, [id]); 
 
 if(loading) return <CircularProgress/>
-if(!product) return <h5>Product not found...</h5>;
+if(!product) return <NotFound/>
     return ( 
         <Grid2 container spacing={6}> 
          <Grid2 size={{xl: 9 ,lg: 4, md: 5 , sm: 6, xs: 12}}> 
