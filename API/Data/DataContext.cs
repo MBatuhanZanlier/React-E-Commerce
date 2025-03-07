@@ -6,7 +6,8 @@ namespace API.Data;
 public class DataContext(DbContextOptions options):DbContext(options)
 {   
        
-  public DbSet<Product> Products =>Set<Product>();
+  public DbSet<Product> Products =>Set<Product>(); 
+  public DbSet<Cart> Carts =>Set<Cart>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -21,8 +22,6 @@ public class DataContext(DbContextOptions options):DbContext(options)
                 new Product{Id=5,Name="Iphone 15",Description="Telefon Açıklaması",ImageUrl="1.jpg",Price=70000,IsActive=true,Stock=100},
                 new Product{Id=6,Name="Iphone 16",Description="Telefon Açıklaması",ImageUrl="1.jpg",Price=70000,IsActive=true,Stock=100}, 
                 new Product{Id=7,Name="Iphone 16",Description="Telefon Açıklaması",ImageUrl="1.jpg",Price=70000,IsActive=true,Stock=100}
-
-
             }
 
         );
